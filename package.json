@@ -1,0 +1,27 @@
+{
+  "name": "integration-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/homeppl1/integration-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/homeppl1/integration-tests/issues"
+  },
+  "homepage": "https://gitlab.com/homeppl1/integration-tests#readme",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-terminal-report": "^4.1.2"
+  },
+  "dependencies": {
+    "newman": "^5.3.2"
+  }
+}
