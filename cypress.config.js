@@ -32,7 +32,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    // baseUrl: "https://www.saucedemo.com",
+    baseUrl: "https://www.gov.uk/calculate-your-holiday-entitlement",
     chromeWebSecurity: false,
   },
 });
