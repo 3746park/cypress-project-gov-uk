@@ -2,8 +2,8 @@
 
 import {
   Given,
-  // When,
-  // Then,
+  When,
+  Then,
 } from "@badeball/cypress-cucumber-preprocessor";
 // const loginPage = require("../../pages/LoginPage");
 
