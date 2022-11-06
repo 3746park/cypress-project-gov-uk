@@ -1,17 +1,38 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const addCucumberPreprocessorPlugin =
+  require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
+const createEsbuildPlugin =
+  require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
+const allureWriter = require("@shelex/cypress-allure-plugin/writer");
+
+//If using this approach, just call the key "setupNodeEvents" in the E2E configurations
+// async function setupNodeEvents(on, config) {
+//   await addCucumberPreprocessorPlugin(on, config);
+//   on(
+//     "file:preprocessor",
+//     createBundler({
+//       plugins: [createEsbuildPlugin(config)],
+//     })
+//   );
+//   return config;
+// }
 
 module.exports = defineConfig({
-  projectId: '4f6xa9',
-  viewportHeight: 1400,
-  viewportWidth: 1400,
-  chromeWebSecurity: false,
-  videoUploadOnPasses: false,
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {
-      require('cypress-terminal-report/src/installLogsPrinter')(on);
+    async setupNodeEvents(on, config) {
+      const bundler = createBundler({
+        plugins: [createEsbuildPlugin(config)],
+      });
+
+      on("file:preprocessor", bundler);
+      await addCucumberPreprocessorPlugin(on, config);
+      allureWriter(on, config);
+
+      return config;
     },
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    specPattern: "cypress/e2e/features/*.feature",
+    // baseUrl: "https://www.saucedemo.com",
+    chromeWebSecurity: false,
   },
-})
+});
