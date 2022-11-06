@@ -20,8 +20,8 @@ import '@shelex/cypress-allure-plugin';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-const options = {
-    // Log console output only
-    collectTypes: ["cons:log", "cons:info", "cons:warn", "cons:error"],
-  };
-require('cypress-terminal-report/src/installLogsCollector')(options);
+// const options = {
+//     // Log console output only
+//     collectTypes: ["cons:log", "cons:info", "cons:warn", "cons:error"],
+//   };
+// require('cypress-terminal-report/src/installLogsCollector')(options);

@@ -7,7 +7,11 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 // const loginPage = require("../../pages/LoginPage");
 
-Given("I go to the start page", () => {
+// Given("I go to the start page", () => {
+//   cy.visit('https://www.gov.uk/calculate-your-holiday-entitlement')
+// });
+
+Given("I go to the start page", function () {
   cy.visit('https://www.gov.uk/calculate-your-holiday-entitlement')
 });
 
