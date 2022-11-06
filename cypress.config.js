@@ -19,6 +19,7 @@ const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 // }
 
 module.exports = defineConfig({
+  projectId: "jvsui4",
   e2e: {
     async setupNodeEvents(on, config) {
       const bundler = createBundler({
