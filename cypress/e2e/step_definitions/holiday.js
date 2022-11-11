@@ -76,3 +76,7 @@ Then("I see the Holiday Entitlement Based On step has loaded", () => {
   cy.get('h1')
     .contains('Is the holiday entitlement based on')
 });
+
+Then("I assert gov logo on page", () => {
+  cy.percySnapshot('logo',{ scope: '#logo' });
+});

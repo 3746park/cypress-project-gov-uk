@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "percy exec": "cypress run --spec \"cypress/e2e/features/visual.feature\" --browser=chrome"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   "homepage": "https://gitlab.com/homeppl1/integration-tests#readme",
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@percy/cli": "^1.14.0",
+    "@percy/cypress": "^3.1.2",
     "@shelex/cypress-allure-plugin": "^2.34.0",
     "cypress": "^10.11.0",
     "cypress-file-upload": "^5.0.8",
