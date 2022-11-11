@@ -80,3 +80,7 @@ Then("I see the Holiday Entitlement Based On step has loaded", () => {
 Then("I assert gov logo on page", () => {
   cy.percySnapshot('logo',{ scope: '#logo' });
 });
+
+Then("I assert cookie banner", () => {
+  cy.percySnapshot('cookieBanner',{ scope: '#global-cookie-message' });
+});

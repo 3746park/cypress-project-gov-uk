@@ -9,3 +9,6 @@ Feature: Visual assertions against holiday entitlement page
 
     Scenario: User can see GOV logo as expected
         Then I assert gov logo on page
+
+    Scenario: User can see GOV cookie banner as expected
+        Then I assert cookie banner
