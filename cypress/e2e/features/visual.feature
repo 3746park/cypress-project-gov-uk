@@ -5,7 +5,6 @@ Feature: Visual assertions against holiday entitlement page
 
     Background:
         Given I go to the start page
-        Given I reject cookies
 
     Scenario: User can see GOV logo as expected
         Then I assert gov logo on page
